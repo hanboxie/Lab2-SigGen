@@ -5,15 +5,16 @@ module sinegen #(
     input logic        clk,
     input logic        rst,
     input logic        en,
-    input logic [D_WIDTH-1:0] offset,
-    input logic [D_WIDTH-1:0] incr,
+    input logic [D_WIDTH-1:0] incr, 
+    input logic [D_WIDTH-1:0] offset, // new input
     output logic [D_WIDTH-1:0] dout1,
-    output logic [D_WIDTH-1:0] dout2
+    output logic [D_WIDTH-1:0] dout2 // new output
 
 );
 
     logic [A_WIDTH-1:0] address;
 
+// counter stays the same
 counter addrCounter (
     .clk (clk),
     .rst (rst),
@@ -22,10 +23,11 @@ counter addrCounter (
     .count (address)
 );
 
+// the rom is changed
 rom sineRom(
     .clk (clk),
-    .addr1 (address+offset),
-    .addr2 (address),
+    .addr1 (address),
+    .addr2 (address+offset),
     .dout1 (dout1),
     .dout2 (dout2)
 );

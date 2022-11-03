@@ -40,9 +40,10 @@ int main(int argc, char **argv, char **env) {
       top->eval ();
     }
     
-    top->incr = vbdValue();
+    top->offset = vbdValue();
     // plot ROM output and print cycle count
-    vbdPlot(int (top->dout), 0, 255);
+    vbdPlot(int (top->dout1), 0, 255);
+    vbdPlot(int (top->dout2), 0, 255);
     vbdCycle(simcyc);
 
     // either simulation finished, or 'q' is pressed
