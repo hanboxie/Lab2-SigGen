@@ -96,7 +96,7 @@ VL_ATTR_COLD void Vsinegen___024root__trace_full_sub_0(Vsinegen___024root* vlSel
     bufp->fullCData(oldp+6,(vlSelf->dout1),8);
     bufp->fullCData(oldp+7,(vlSelf->dout2),8);
     bufp->fullCData(oldp+8,(vlSelf->sinegen__DOT__address),8);
-    bufp->fullCData(oldp+9,((0xffU & ((IData)(0x40U) 
-                                      + (IData)(vlSelf->sinegen__DOT__address)))),8);
+    bufp->fullCData(oldp+9,((0xffU & ((IData)(vlSelf->sinegen__DOT__address) 
+                                      + (IData)(vlSelf->offset)))),8);
     bufp->fullIData(oldp+10,(8U),32);
 }
